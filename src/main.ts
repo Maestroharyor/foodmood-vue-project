@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
+import VueMeta from "vue-meta";
 
 // Fonts
 import "@fontsource/koho/200.css";

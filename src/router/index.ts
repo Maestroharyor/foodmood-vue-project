@@ -1,3 +1,4 @@
+import { Capitalize } from "@/functions/utilities";
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 
@@ -70,6 +71,24 @@ const router = createRouter({
     // always scroll to top
     return { top: 0 };
   },
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.name === "recipesDetails") {
+    console.log(to.params);
+    const routerParamsId = to.params.id as string;
+    const routerParamsArr = routerParamsId.split("-");
+
+    document.title = `${Capitalize(
+      routerParamsArr.slice(0, routerParamsArr.length - 1).join(" ")
+    )} - FoodMood`;
+  } else if (to.name === "recipesCategories") {
+    document.title = `${Capitalize(String(to.params.name))} Recipes - FoodMood`;
+  } else {
+    document.title = `${Capitalize(String(to.name))} - FoodMood`;
+  }
+
+  next();
 });
 
 export default router;

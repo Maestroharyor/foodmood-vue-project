@@ -48,7 +48,7 @@
             v-if="searchResults.length && !loading">
             <router-link
               :to="{ name: 'recipesDetails', params: { id: `${item.strMeal.toLowerCase().split(' ').join('-')}-${item.idMeal}` } }"
-              class="pt-3"
+              class="pt-3 hover:text-green-700"
               v-for="(item, index) in searchResults"
               :key="index">
               <p>{{ item.strMeal }}</p>
