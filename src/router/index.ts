@@ -75,7 +75,6 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.name === "recipesDetails") {
-    console.log(to.params);
     const routerParamsId = to.params.id as string;
     const routerParamsArr = routerParamsId.split("-");
 

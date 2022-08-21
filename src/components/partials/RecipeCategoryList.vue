@@ -75,7 +75,7 @@ export default defineComponent({
             axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${this.$router.currentRoute.value.params.name}`)
                 .then(response => {
                     this.loading = false;
-                    console.log(response.data)
+
                     if (response.data.meals !== null || response.data.meals !== undefined) {
                         this.currentRecipeCategory = response.data.meals
                     }
@@ -86,7 +86,7 @@ export default defineComponent({
                 })
                 .catch(error => {
                     this.loading = false;
-                    console.log(error);
+
                 });
         }
     },
