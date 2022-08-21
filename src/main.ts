@@ -22,17 +22,18 @@ import {
   faSearch,
   faCircleNotch,
   faPlay,
+  faBars,
+  faClose,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
-library.add(faSearch, faCircleNotch, faPlay);
+library.add(faSearch, faCircleNotch, faPlay, faBars, faClose);
 
 // CSS
 import "./styles/global.css";
 
 // Vuex Store
 import { store, key } from "./store";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 createApp(App)
   .use(store, key)
