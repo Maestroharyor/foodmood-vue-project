@@ -66,3 +66,11 @@ export interface categoryDataType {
   strCategoryThumb: string;
   strCategoryDescription: string;
 }
+
+export interface storeState {
+  recipeOfTheDay: null | mealsDBDataType;
+  categories: categoryDataType[];
+  selectedCategory: categoryDataType;
+  featuredRecipes: mealsFromCatDataType[];
+  currentRecipesList: mealsFromCatDataType[];
+}

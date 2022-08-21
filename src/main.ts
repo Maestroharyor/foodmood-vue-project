@@ -18,18 +18,24 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
-import { faSearch, faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSearch,
+  faCircleNotch,
+  faPlay,
+} from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
-library.add(faSearch, faCircleNotch);
+library.add(faSearch, faCircleNotch, faPlay);
 
 // CSS
 import "./styles/global.css";
 
-import store from "./store";
+// Vuex Store
+import { store, key } from "./store";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 createApp(App)
-  .use(store)
+  .use(store, key)
   .component("font-awesome-icon", FontAwesomeIcon)
   .use(router)
   .mount("#app");
